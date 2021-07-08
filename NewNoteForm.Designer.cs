@@ -42,6 +42,7 @@ namespace CalendarExam
             this.titleTextBox.Size = new System.Drawing.Size(294, 45);
             this.titleTextBox.TabIndex = 0;
             this.titleTextBox.Text = "Title";
+            this.titleTextBox.TextChanged += new System.EventHandler(this.titleTextBox_TextChanged);
             // 
             // noteTextBox
             // 
@@ -51,6 +52,7 @@ namespace CalendarExam
             this.noteTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.noteTextBox.Size = new System.Drawing.Size(294, 326);
             this.noteTextBox.TabIndex = 1;
+            this.noteTextBox.TextChanged += new System.EventHandler(this.noteTextBox_TextChanged);
             // 
             // dateTimePicker
             // 
@@ -58,6 +60,7 @@ namespace CalendarExam
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(294, 22);
             this.dateTimePicker.TabIndex = 2;
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // NewNoteForm
             // 

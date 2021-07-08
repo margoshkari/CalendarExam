@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace CalendarExam
             SelectedNote = this.TitleLabel.Text;
         }
 
-        public NoteControl(string text, string name, int PosX, int PosY, DateTime time) : this()
+        public NoteControl(string text, string name, DateTime time) : this()
         {
             this.Name = name;
             this.BackColor = Color.LightGray;
@@ -40,20 +41,20 @@ namespace CalendarExam
 
             TitleLabel.Text = name;
             TitleLabel.Font = new Font("Times New Roman", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            TitleLabel.Size = new Size(this.Width, PosY + TitleLabel.Height);
-            TitleLabel.Location = new Point(PosX, PosY);
+            TitleLabel.Size = new Size(this.Width, 40);
+            TitleLabel.Location = new Point(0, 0);
             TitleLabel.Visible = true;
 
             TextLabel.Text = text;
             TextLabel.Font = new Font("Times New Roman", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            TextLabel.Size = new Size(this.Width, 20);
-            TextLabel.Location = new Point(PosX, PosY + TitleLabel.Height * 2);
+            TextLabel.Size = new Size(this.Width, 80);
+            TextLabel.Location = new Point(0, 40);
             TextLabel.Visible = true;
 
             TimeLabel.Text = time.Date.ToString();
             TimeLabel.Font = new Font("Times New Roman", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            TimeLabel.Size = new Size(this.Width, PosY + TitleLabel.Height * 3);
-            TimeLabel.Location = new Point(PosX, PosY);
+            TimeLabel.Size = new Size(this.Width, 20);
+            TimeLabel.Location = new Point(0, 120);
             TimeLabel.Visible = true;
 
 
