@@ -47,7 +47,7 @@ namespace CalendarExam
                 }
             }
             ci = new CultureInfo(File.ReadAllText("language.txt"));
-            ChangeLanguage();
+           // ChangeLanguage();
             this.BackColor = Color.FromArgb(int.Parse(File.ReadAllText("BackColor.txt").Split(':')[0]),
                 int.Parse(File.ReadAllText("BackColor.txt").Split(':')[1]),
                 int.Parse(File.ReadAllText("BackColor.txt").Split(':')[2]),
@@ -139,6 +139,7 @@ namespace CalendarExam
         {
             SettingsForm form = new SettingsForm();
             form.ShowDialog();
+            ChangeLanguage();
         }
     }
 }

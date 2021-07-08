@@ -29,6 +29,7 @@ namespace CalendarExam
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.languageLabel = new System.Windows.Forms.Label();
             this.backColorLabel = new System.Windows.Forms.Label();
             this.languageComboBox = new System.Windows.Forms.ComboBox();
@@ -37,58 +38,41 @@ namespace CalendarExam
             // 
             // languageLabel
             // 
-            this.languageLabel.AutoSize = true;
-            this.languageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.languageLabel.Location = new System.Drawing.Point(43, 87);
+            resources.ApplyResources(this.languageLabel, "languageLabel");
             this.languageLabel.Name = "languageLabel";
-            this.languageLabel.Size = new System.Drawing.Size(82, 20);
-            this.languageLabel.TabIndex = 0;
-            this.languageLabel.Text = "Language";
             // 
             // backColorLabel
             // 
-            this.backColorLabel.AutoSize = true;
-            this.backColorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.backColorLabel.Location = new System.Drawing.Point(43, 159);
+            resources.ApplyResources(this.backColorLabel, "backColorLabel");
             this.backColorLabel.Name = "backColorLabel";
-            this.backColorLabel.Size = new System.Drawing.Size(87, 20);
-            this.backColorLabel.TabIndex = 2;
-            this.backColorLabel.Text = "BackColor";
             // 
             // languageComboBox
             // 
+            resources.ApplyResources(this.languageComboBox, "languageComboBox");
             this.languageComboBox.FormattingEnabled = true;
             this.languageComboBox.Items.AddRange(new object[] {
-            "en-US",
-            "ru",
-            "uk"});
-            this.languageComboBox.Location = new System.Drawing.Point(165, 87);
+            resources.GetString("languageComboBox.Items"),
+            resources.GetString("languageComboBox.Items1"),
+            resources.GetString("languageComboBox.Items2")});
             this.languageComboBox.Name = "languageComboBox";
-            this.languageComboBox.Size = new System.Drawing.Size(121, 24);
-            this.languageComboBox.TabIndex = 3;
             this.languageComboBox.SelectedIndexChanged += new System.EventHandler(this.languageComboBox_SelectedIndexChanged);
             // 
             // colorButton
             // 
-            this.colorButton.Location = new System.Drawing.Point(185, 159);
+            resources.ApplyResources(this.colorButton, "colorButton");
             this.colorButton.Name = "colorButton";
-            this.colorButton.Size = new System.Drawing.Size(75, 23);
-            this.colorButton.TabIndex = 5;
-            this.colorButton.Text = "Color";
             this.colorButton.UseVisualStyleBackColor = true;
             this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
             // 
             // SettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 297);
             this.Controls.Add(this.colorButton);
             this.Controls.Add(this.languageComboBox);
             this.Controls.Add(this.backColorLabel);
             this.Controls.Add(this.languageLabel);
             this.Name = "SettingsForm";
-            this.Text = "SettingsForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

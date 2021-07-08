@@ -29,110 +29,86 @@ namespace CalendarExam
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.panel = new System.Windows.Forms.Panel();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.prevButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.settingsButton = new System.Windows.Forms.Button();
-            this.prevButton = new System.Windows.Forms.Button();
-            this.nextButton = new System.Windows.Forms.Button();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // monthCalendar
             // 
-            this.monthCalendar.Location = new System.Drawing.Point(42, 98);
+            resources.ApplyResources(this.monthCalendar, "monthCalendar");
             this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.TabIndex = 0;
             this.monthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateChanged);
             // 
             // panel
             // 
+            resources.ApplyResources(this.panel, "panel");
             this.panel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel.Controls.Add(this.nextButton);
             this.panel.Controls.Add(this.prevButton);
-            this.panel.Location = new System.Drawing.Point(431, 12);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(342, 390);
-            this.panel.TabIndex = 1;
+            // 
+            // nextButton
+            // 
+            resources.ApplyResources(this.nextButton, "nextButton");
+            this.nextButton.Name = "nextButton";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            // 
+            // prevButton
+            // 
+            resources.ApplyResources(this.prevButton, "prevButton");
+            this.prevButton.Name = "prevButton";
+            this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(12, 416);
+            resources.ApplyResources(this.searchTextBox, "searchTextBox");
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(292, 22);
-            this.searchTextBox.TabIndex = 2;
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(310, 415);
+            resources.ApplyResources(this.searchButton, "searchButton");
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 3;
-            this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(431, 415);
+            resources.ApplyResources(this.addButton, "addButton");
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 4;
-            this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(528, 415);
+            resources.ApplyResources(this.deleteButton, "deleteButton");
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 5;
-            this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Visible = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(713, 416);
+            resources.ApplyResources(this.settingsButton, "settingsButton");
             this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(75, 23);
-            this.settingsButton.TabIndex = 6;
-            this.settingsButton.Text = "Settings";
             this.settingsButton.UseVisualStyleBackColor = true;
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
-            // prevButton
-            // 
-            this.prevButton.Location = new System.Drawing.Point(20, 354);
-            this.prevButton.Name = "prevButton";
-            this.prevButton.Size = new System.Drawing.Size(75, 23);
-            this.prevButton.TabIndex = 0;
-            this.prevButton.Text = "prev";
-            this.prevButton.UseVisualStyleBackColor = true;
-            this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
-            // 
-            // nextButton
-            // 
-            this.nextButton.Location = new System.Drawing.Point(254, 354);
-            this.nextButton.Name = "nextButton";
-            this.nextButton.Size = new System.Drawing.Size(75, 23);
-            this.nextButton.TabIndex = 1;
-            this.nextButton.Text = "next";
-            this.nextButton.UseVisualStyleBackColor = true;
-            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
@@ -141,7 +117,6 @@ namespace CalendarExam
             this.Controls.Add(this.panel);
             this.Controls.Add(this.monthCalendar);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
