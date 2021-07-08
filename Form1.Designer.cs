@@ -36,6 +36,9 @@ namespace CalendarExam
             this.addButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.settingsButton = new System.Windows.Forms.Button();
+            this.prevButton = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // monthCalendar
@@ -46,6 +49,8 @@ namespace CalendarExam
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.nextButton);
+            this.panel.Controls.Add(this.prevButton);
             this.panel.Location = new System.Drawing.Point(431, 12);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(342, 390);
@@ -95,6 +100,24 @@ namespace CalendarExam
             this.settingsButton.Text = "Settings";
             this.settingsButton.UseVisualStyleBackColor = true;
             // 
+            // prevButton
+            // 
+            this.prevButton.Location = new System.Drawing.Point(20, 354);
+            this.prevButton.Name = "prevButton";
+            this.prevButton.Size = new System.Drawing.Size(75, 23);
+            this.prevButton.TabIndex = 0;
+            this.prevButton.Text = "prev";
+            this.prevButton.UseVisualStyleBackColor = true;
+            // 
+            // nextButton
+            // 
+            this.nextButton.Location = new System.Drawing.Point(254, 354);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(75, 23);
+            this.nextButton.TabIndex = 1;
+            this.nextButton.Text = "next";
+            this.nextButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -109,6 +132,7 @@ namespace CalendarExam
             this.Controls.Add(this.monthCalendar);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +147,8 @@ namespace CalendarExam
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button prevButton;
     }
 }
 

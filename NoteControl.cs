@@ -35,11 +35,12 @@ namespace CalendarExam
         {
             this.Name = name;
             this.BackColor = Color.LightGray;
-            this.Location = new Point(50, 0);
+            this.Location = new Point(50, 70);
             this.Size = new Size(150, 100);
             this.Visible = true;
 
             TitleLabel.Text = name;
+            TitleLabel.BackColor = Color.Gray;
             TitleLabel.Font = new Font("Times New Roman", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             TitleLabel.Size = new Size(this.Width, 40);
             TitleLabel.Location = new Point(0, 0);
