@@ -106,6 +106,7 @@ namespace CalendarExam
             this.settingsButton.TabIndex = 6;
             this.settingsButton.Text = "Settings";
             this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // prevButton
             // 

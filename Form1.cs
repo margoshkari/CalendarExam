@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,6 +11,9 @@ namespace CalendarExam
 {
     public partial class Form1 : Form
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
+        private CultureInfo ci;
+        private string language = string.Empty;
         List<NoteControl> notes = new List<NoteControl>();
         string searchingNoteName = string.Empty;
         NoteControl selectedNote = new NoteControl();
@@ -41,8 +46,21 @@ namespace CalendarExam
                     notes.First().Visible = true;
                 }
             }
+            ci = new CultureInfo(File.ReadAllText("language.txt"));
+            ChangeLanguage();
+            this.BackColor = Color.FromArgb(int.Parse(File.ReadAllText("BackColor.txt").Split(':')[0]),
+                int.Parse(File.ReadAllText("BackColor.txt").Split(':')[1]),
+                int.Parse(File.ReadAllText("BackColor.txt").Split(':')[2]),
+                int.Parse(File.ReadAllText("BackColor.txt").Split(':')[3]));
         }
-
+        private void ChangeLanguage()
+        {
+            foreach (Control c in this.Controls)
+            {
+                resources.ApplyResources(c, c.Name, ci);
+            }
+            resources.ApplyResources(this, "$this");
+        }
         private void Form1_Click(object sender, EventArgs e)
         {
             selectedNote = notes.Find(item => item.Visible == true);
@@ -115,6 +133,12 @@ namespace CalendarExam
                 notes.All(item => item.Visible = false);
                 notes.Find(item => item.TimeLabel.Text.Equals(this.monthCalendar.SelectionRange.End.ToString())).Visible = true;
             }
+        }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            SettingsForm form = new SettingsForm();
+            form.ShowDialog();
         }
     }
 }
