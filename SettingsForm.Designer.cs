@@ -30,10 +30,8 @@ namespace CalendarExam
         private void InitializeComponent()
         {
             this.languageLabel = new System.Windows.Forms.Label();
-            this.saveLabel = new System.Windows.Forms.Label();
             this.backColorLabel = new System.Windows.Forms.Label();
             this.languageComboBox = new System.Windows.Forms.ComboBox();
-            this.saveButton = new System.Windows.Forms.Button();
             this.colorButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -47,21 +45,11 @@ namespace CalendarExam
             this.languageLabel.TabIndex = 0;
             this.languageLabel.Text = "Language";
             // 
-            // saveLabel
-            // 
-            this.saveLabel.AutoSize = true;
-            this.saveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.saveLabel.Location = new System.Drawing.Point(43, 140);
-            this.saveLabel.Name = "saveLabel";
-            this.saveLabel.Size = new System.Drawing.Size(86, 20);
-            this.saveLabel.TabIndex = 1;
-            this.saveLabel.Text = "Save Note";
-            // 
             // backColorLabel
             // 
             this.backColorLabel.AutoSize = true;
             this.backColorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.backColorLabel.Location = new System.Drawing.Point(44, 198);
+            this.backColorLabel.Location = new System.Drawing.Point(43, 159);
             this.backColorLabel.Name = "backColorLabel";
             this.backColorLabel.Size = new System.Drawing.Size(87, 20);
             this.backColorLabel.TabIndex = 2;
@@ -78,24 +66,17 @@ namespace CalendarExam
             this.languageComboBox.Name = "languageComboBox";
             this.languageComboBox.Size = new System.Drawing.Size(121, 24);
             this.languageComboBox.TabIndex = 3;
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(188, 137);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 4;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
+            this.languageComboBox.SelectedIndexChanged += new System.EventHandler(this.languageComboBox_SelectedIndexChanged);
             // 
             // colorButton
             // 
-            this.colorButton.Location = new System.Drawing.Point(188, 195);
+            this.colorButton.Location = new System.Drawing.Point(185, 159);
             this.colorButton.Name = "colorButton";
             this.colorButton.Size = new System.Drawing.Size(75, 23);
             this.colorButton.TabIndex = 5;
             this.colorButton.Text = "Color";
             this.colorButton.UseVisualStyleBackColor = true;
+            this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
             // 
             // SettingsForm
             // 
@@ -103,10 +84,8 @@ namespace CalendarExam
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 297);
             this.Controls.Add(this.colorButton);
-            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.languageComboBox);
             this.Controls.Add(this.backColorLabel);
-            this.Controls.Add(this.saveLabel);
             this.Controls.Add(this.languageLabel);
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
@@ -118,10 +97,8 @@ namespace CalendarExam
         #endregion
 
         private System.Windows.Forms.Label languageLabel;
-        private System.Windows.Forms.Label saveLabel;
         private System.Windows.Forms.Label backColorLabel;
         private System.Windows.Forms.ComboBox languageComboBox;
-        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button colorButton;
     }
 }

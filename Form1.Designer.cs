@@ -46,10 +46,12 @@ namespace CalendarExam
             this.monthCalendar.Location = new System.Drawing.Point(42, 98);
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.TabIndex = 0;
+            this.monthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateChanged);
             // 
             // panel
             // 
-            this.panel.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel.Controls.Add(this.nextButton);
             this.panel.Controls.Add(this.prevButton);
             this.panel.Location = new System.Drawing.Point(431, 12);
@@ -63,6 +65,7 @@ namespace CalendarExam
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(292, 22);
             this.searchTextBox.TabIndex = 2;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // searchButton
             // 
@@ -72,6 +75,7 @@ namespace CalendarExam
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // addButton
             // 
@@ -91,6 +95,8 @@ namespace CalendarExam
             this.deleteButton.TabIndex = 5;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Visible = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // settingsButton
             // 

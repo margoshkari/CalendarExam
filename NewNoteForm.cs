@@ -9,10 +9,10 @@ namespace CalendarExam
         public NewNoteForm()
         {
             InitializeComponent();
-            this.FormClosing += NewNoteForm_FormClosing;
+            this.FormClosed += NewNoteForm_FormClosed;
         }
 
-        private void NewNoteForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void NewNoteForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Manager.SaveAllNotes("AllNotes.txt");
         }

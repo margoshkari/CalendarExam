@@ -6,9 +6,9 @@ namespace CalendarExam
 {
     public class NoteControl : Control
     {
-        private Label TitleLabel;
-        private Label TextLabel;
-        private Label TimeLabel;
+        public Label TitleLabel;
+        public Label TextLabel;
+        public Label TimeLabel;
         public NoteControl()
         {
             TitleLabel = new Label();
