@@ -50,11 +50,11 @@ namespace CalendarExam
             // 
             // panel
             // 
-            resources.ApplyResources(this.panel, "panel");
             this.panel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel.Controls.Add(this.nextButton);
             this.panel.Controls.Add(this.prevButton);
+            resources.ApplyResources(this.panel, "panel");
             this.panel.Name = "panel";
             // 
             // nextButton

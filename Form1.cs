@@ -11,9 +11,8 @@ namespace CalendarExam
 {
     public partial class Form1 : Form
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
         private CultureInfo ci;
-        private string language = string.Empty;
         List<NoteControl> notes = new List<NoteControl>();
         string searchingNoteName = string.Empty;
         NoteControl selectedNote = new NoteControl();
@@ -47,7 +46,7 @@ namespace CalendarExam
                 }
             }
             ci = new CultureInfo(File.ReadAllText("language.txt"));
-           // ChangeLanguage();
+            ChangeLanguage();
             this.BackColor = Color.FromArgb(int.Parse(File.ReadAllText("BackColor.txt").Split(':')[0]),
                 int.Parse(File.ReadAllText("BackColor.txt").Split(':')[1]),
                 int.Parse(File.ReadAllText("BackColor.txt").Split(':')[2]),
