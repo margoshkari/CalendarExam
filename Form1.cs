@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logic;
 
 namespace CalendarExam
 {
@@ -15,6 +16,11 @@ namespace CalendarExam
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
