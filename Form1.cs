@@ -14,6 +14,12 @@ namespace CalendarExam
         {
             InitializeComponent();
             this.Load += Form1_Load;
+            this.FormClosing += Form1_FormClosing;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Manager.SaveAllNotes("AllNotes.txt");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,6 +49,26 @@ namespace CalendarExam
                 notes.Add(new NoteControl(Manager.notes.Last().Text, Manager.notes.Last().NoteName, Manager.notes.Last().Date));
 
             this.panel.Controls.Add(notes.Last());
+        }
+
+        private void prevButton_Click(object sender, EventArgs e)
+        {
+            int index = notes.FindIndex(item => item.Visible == true);
+            if(index - 1 >= 0)
+            {
+                notes[index].Visible = false;
+                notes[--index].Visible = true;
+            }
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            int index = notes.FindIndex(item => item.Visible == true);
+            if (index + 1 < notes.Count())
+            {
+                notes[index].Visible = false;
+                notes[++index].Visible = true;
+            }
         }
     }
 }

@@ -49,6 +49,7 @@ namespace CalendarExam
             // 
             // panel
             // 
+            this.panel.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel.Controls.Add(this.nextButton);
             this.panel.Controls.Add(this.prevButton);
             this.panel.Location = new System.Drawing.Point(431, 12);
@@ -108,6 +109,7 @@ namespace CalendarExam
             this.prevButton.TabIndex = 0;
             this.prevButton.Text = "prev";
             this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
             // 
             // nextButton
             // 
@@ -117,6 +119,7 @@ namespace CalendarExam
             this.nextButton.TabIndex = 1;
             this.nextButton.Text = "next";
             this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // Form1
             // 
